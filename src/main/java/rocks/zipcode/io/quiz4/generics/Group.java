@@ -7,35 +7,47 @@ import java.util.List;
 /**
  * @author leon on 18/12/2018.
  */
-public class Group<_> {
+public class Group<AnyType> implements GroupInterface<AnyType>{
 
-    List<_> group;
+    List<AnyType> group;
     public Group() {
         this.group = new ArrayList<>();
     }
 
     public Integer count() {
-        return null;
+        Integer count = 0;
+        for(AnyType items : group){
+            count++;
+        }
+        return count;
     }
 
-    public void insert(_ value) {
+    public void insert(AnyType value) {
+        this.group.add(value);
     }
 
-    public Boolean has(_ value) {
-        return null;
+    public Boolean has(AnyType value) {
+        return this.group.contains(value);
     }
 
-    public _ fetch(int indexOfValue) {
-        return null;
+    public AnyType fetch(int indexOfValue) {
+        return this.group.get(indexOfValue);
     }
 
-    public void delete(_ value) {
+    public void delete(AnyType value) {
+        this.group.remove(value);
     }
 
     public void clear() {
+        this.group.clear();
     }
 
-    public Iterator<_> iterator() {
-        return null;
+    public Iterator<AnyType> iterator() {
+        return this.group.iterator();
+    }
+
+    @Override
+    public String toString() {
+        return this.group.toString();
     }
 }
