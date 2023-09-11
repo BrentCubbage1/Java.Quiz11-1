@@ -1,13 +1,17 @@
 package rocks.zipcode.io.quiz4.generics;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author leon on 18/12/2018.
  */
 public class Group<_> {
+
+    List<_> group;
     public Group() {
-        throw new UnsupportedOperationException("Method not yet implemented");
+        this.group = new ArrayList<>();
     }
 
     public Integer count() {
